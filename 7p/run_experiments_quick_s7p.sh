@@ -3,16 +3,9 @@ set -euo pipefail
 
 # =====================================================
 # CONFIGURACION DEL EXPERIMENTO - s7p (3D, stencil 7 puntos)
-# VERSION RAPIDA, ~30 min
-#
 #
 #   - GRID_SIZES (secuencial+omp+cuda): 64/128/256
-#     (256^3 ya es ~134M celdas; en CPU con STEPS=600 es el
-#      punto mas caro que entra comodo en el presupuesto)
 #   - CUDA_EXTRA_GRID_SIZES: 512 SOLO para las versiones CUDA
-#     (512^3 = ~134M celdas x4 = perfectamente manejable en GPU,
-#      pero en CPU secuencial/OpenMP se vuelve demasiado lento
-#      para el presupuesto de 30 min)
 #   - REPETITIONS: 3
 #   - THREAD_COUNTS: 4 valores (1,4,8,12)
 # =====================================================
