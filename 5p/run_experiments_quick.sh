@@ -2,16 +2,11 @@
 set -euo pipefail
 
 # =====================================================
-# CONFIGURACION DEL EXPERIMENTO (VERSION RAPIDA, ~30 min)
+# CONFIGURACION DEL EXPERIMENTO
 #
 # Se recorto respecto a la version completa:
 #   - GRID_SIZES completo (secuencial+omp+cuda): 512/1024/2048
-#     (se quito 4096 de aqui porque en CPU/OpenMP es el que
-#      mas tiempo consume: 4x el costo de 2048 por repeticion)
 #   - CUDA_EXTRA_GRID_SIZES: 4096 SOLO para las versiones CUDA
-#     (en GPU esa grilla sigue siendo barata, segundos por
-#      corrida, asi que se agrega como punto extra de escala
-#      sin afectar el presupuesto de tiempo)
 #   - REPETITIONS: 5 -> 3
 #   - THREAD_COUNTS: 6 valores -> 4 valores (1,4,8,12)
 # =====================================================
